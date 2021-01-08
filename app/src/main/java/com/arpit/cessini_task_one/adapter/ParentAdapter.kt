@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.arpit.cessini_task_one.R
@@ -48,11 +47,20 @@ class ParentAdapter(private val itemList: ArrayList<ParentItem>) :
         holder.rvChildItem.adapter = childAdapter
         holder.rvChildItem.setRecycledViewPool(viewPool)
 
-        holder.txtParentTitle.setOnClickListener{
-            if (holder.rvChildItem.isVisible) {
+
+        if (currItem.visState) {
+            holder.rvChildItem.visibility = View.VISIBLE
+        } else {
+            holder.rvChildItem.visibility = View.GONE
+        }
+
+        holder.txtParentTitle.setOnClickListener {
+            if (currItem.visState) {
                 holder.rvChildItem.visibility = View.GONE
+                currItem.visState = false
             } else {
                 holder.rvChildItem.visibility = View.VISIBLE
+                currItem.visState = true
             }
         }
     }
