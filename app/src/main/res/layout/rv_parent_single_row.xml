@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="4dp"
+    android:layout_marginVertical="2dp">
+
+
+    <androidx.cardview.widget.CardView
+        app:cardCornerRadius="2dp"
+        android:id="@+id/cvParent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="4dp"
+        android:elevation="4dp">
+
+        <LinearLayout
+            android:id="@+id/llParentContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="10dp"
+            android:paddingTop="10dp">
+
+
+            <TextView
+                android:id="@+id/txtParentTitle"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_alignParentLeft="true"
+                android:autoSizeMaxTextSize="22sp"
+                android:autoSizeMinTextSize="18sp"
+                android:autoSizeTextType="uniform"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="DEPARTMENT NAME" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvChildItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.473"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtParentTitle" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>
