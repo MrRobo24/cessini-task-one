@@ -47,21 +47,5 @@ class ParentAdapter(private val itemList: ArrayList<ParentItem>) :
         holder.rvChildItem.adapter = childAdapter
         holder.rvChildItem.setRecycledViewPool(viewPool)
 
-
-        if (currItem.visState) {
-            holder.rvChildItem.visibility = View.VISIBLE
-        } else {
-            holder.rvChildItem.visibility = View.GONE
-        }
-
-        holder.txtParentTitle.setOnClickListener {
-            if (currItem.visState) {
-                holder.rvChildItem.visibility = View.GONE
-                currItem.visState = false
-            } else {
-                holder.rvChildItem.visibility = View.VISIBLE
-                currItem.visState = true
-            }
-        }
     }
 }

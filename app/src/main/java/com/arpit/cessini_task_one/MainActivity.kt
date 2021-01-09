@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
     private fun buildParentList(): ArrayList<ParentItem> {
         val parentList: ArrayList<ParentItem> = ArrayList()
         for (i in 1..8) {
-            val parentItem: ParentItem = ParentItem("Department Name $i", false, buildChildList())
+            val parentItem: ParentItem = ParentItem("Department Name $i", buildChildList())
             parentList.add(parentItem)
         }
         return parentList
@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun buildChildList(): ArrayList<ChildItem> {
         val childList: ArrayList<ChildItem> = ArrayList()
-        for (i in 1..10) {
+        for (i in 1..3) {
             val childItem: ChildItem = ChildItem("Employee Name $i")
             childList.add(childItem)
         }
